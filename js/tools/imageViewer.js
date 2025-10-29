@@ -112,8 +112,11 @@ export default function imageViewer() {
   });
 
   const imgDoms = document.querySelectorAll(
-    ".markdown-body img, .masonry-item img, #shuoshuo-content img",
-  );
+  ".markdown-body img:not(.no-viewer), " +
+  ".masonry-item img:not(.no-viewer), " +
+  "#shuoshuo-content img:not(.no-viewer)",
+);
+
 
   const escapeKeyListener = (event) => {
     if (event.key === "Escape" && isBigImage) {
